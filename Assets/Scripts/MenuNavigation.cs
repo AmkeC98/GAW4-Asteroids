@@ -18,10 +18,10 @@ public class MenuNavigation : MonoBehaviour
     private void Start()
     {
         selectedOption = 1;
-        option1.color = Color.green;
+        option1.color = Color.grey;
         option2.color = Color.white;
         option3.color = Color.white;
-        option1.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+        option1.fontSize = 18;
 
         errorMessage.enabled = false;
         errorText.enabled = false;
@@ -40,25 +40,25 @@ public class MenuNavigation : MonoBehaviour
             option1.color = Color.white;
             option2.color = Color.white;
             option3.color = Color.white;
-            option1.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            option2.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            option3.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            option1.fontSize = 16;
+            option2.fontSize = 16;
+            option3.fontSize = 16;
             errorMessage.enabled = false;
             errorText.enabled = false;
 
             switch (selectedOption)
             {
                 case 1:
-                    option1.color = Color.green;
-                    option1.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option1.fontSize = 18;
+                    option1.color = Color.grey;
                     break;
                 case 2:
-                    option2.color = Color.green;
-                    option2.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option2.fontSize = 18;
+                    option2.color = Color.grey;
                     break;
                 case 3:
-                    option3.color = Color.green;
-                    option3.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option3.fontSize = 18;
+                    option3.color = Color.grey;
                     break;
             }
         }
@@ -74,45 +74,40 @@ public class MenuNavigation : MonoBehaviour
             option1.color = Color.white;
             option2.color = Color.white;
             option3.color = Color.white;
-            option1.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            option2.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            option3.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            option1.fontSize = 16;
+            option2.fontSize = 16;
+            option3.fontSize = 16;
             errorMessage.enabled = false;
             errorText.enabled = false;
 
             switch (selectedOption)
             {
                 case 1:
-                    option1.color = Color.green;
-                    option1.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option1.fontSize = 18;
+                    option1.color = Color.grey;
                     break;
                 case 2:
-                    option2.color = Color.green;
-                    option2.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option2.fontSize = 18;
+                    option2.color = Color.grey;
                     break;
                 case 3:
-                    option3.color = Color.green;
-                    option3.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+                    option3.fontSize = 18;
+                    option3.color = Color.grey;
                     break;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Picked " + selectedOption);
-
             switch (selectedOption)
             {
                 case 1:
-                    Debug.Log("OPTION 1");
                     SceneManager.LoadScene("GameScene");
                     break;
                 case 2:
-                    Debug.Log("OPTION 2");
                     SceneManager.LoadScene("InstructionsScene");
                     break;
                 case 3:
-                    Debug.Log("OPTION 3");
                     ShowError();
                     break;
             }
@@ -127,7 +122,6 @@ public class MenuNavigation : MonoBehaviour
 
     private void ShowError()
     {
-        Debug.Log("Option not available");
         errorMessage.enabled = true;
         errorText.enabled = true;
     }
